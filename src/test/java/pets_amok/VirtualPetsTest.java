@@ -41,5 +41,17 @@ public class VirtualPetsTest {
         assertEquals(80, health);
     }
 
+    @Test
+    public void shouldWalkAllPetsToIncreaseHappiness() {
+        VirtualPets underTest = new VirtualPets("Rex", "A very good boy", 80, 20, 80);
+        OrganicPets organicPet = new OrganicPets("Rex", "A very good boy", 80, 20, 80);
+        RoboticPets roboticPet = new RoboticPets("Borkbot 3000", "A mechanical spaz", 80, 20, 80);
+        int happiness = underTest.getHappiness();
+        assertEquals(80, happiness);
+        underTest.walkAllPets();
+        assertEquals(100, organicPet.walkAllPets());
+        assertEquals(100, roboticPet.walkAllPets());
+    }
+
 
 }

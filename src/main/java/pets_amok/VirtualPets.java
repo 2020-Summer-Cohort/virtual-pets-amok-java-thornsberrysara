@@ -65,4 +65,9 @@ public class VirtualPets {
         oilLevel = oilLevel + 20;
         return oilLevel;
     }
+
+    public int walkAllPets() {
+        happiness = happiness + 20;
+        return happiness;
+    }
 }
