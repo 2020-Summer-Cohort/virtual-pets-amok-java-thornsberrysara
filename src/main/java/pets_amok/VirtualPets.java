@@ -8,6 +8,13 @@ public class VirtualPets {
     protected int boredom;
     protected int health;
 
+    //Organic Pets
+    protected int hunger;
+    protected int thirst;
+
+    //Robotic Pets
+    protected int oilLevel;
+
 
     public VirtualPets(String petName, String petDescription, int happiness, int boredom, int health) {
         this.petName = petName;
@@ -15,6 +22,13 @@ public class VirtualPets {
         this.happiness = 80;
         this.boredom = 20;
         this.health = 80;
+
+        //Organic Pets
+        this.hunger = 60;
+        this.thirst = 60;
+
+        //Robotic Pets
+        this.oilLevel = 60;
     }
 
     public String getPetName() {
@@ -35,5 +49,20 @@ public class VirtualPets {
 
     public int getHealth() {
         return health;
+    }
+
+    public int feedOrganicPets() {
+        hunger = hunger + 20;
+        return hunger;
+    }
+
+    public int waterOrganicPets() {
+        thirst = thirst + 15;
+        return thirst;
+    }
+
+    public int oilRoboticPets() {
+        oilLevel = oilLevel + 20;
+        return oilLevel;
     }
 }
