@@ -9,48 +9,46 @@ public class ShelterTest {
     @Test
     public void addPetToShelter() {
         Shelter underTest = new Shelter();
-        OrganicPets organicPet = new OrganicPets("Rex", "A very good boy", 80, 20, 80);
-        RoboticPets roboticPet = new RoboticPets("Borkbot 3000", "A mechanical spaz", 80, 20, 80);
+        OrganicDog organicPet = new OrganicDog("Rex", "A very good boy");
+        RoboticPets roboticPet = new RoboticPets("Borkbot 3000", "A mechanical spaz");
         underTest.addPetToShelter(organicPet, roboticPet);
     }
 
     @Test
     public void removePetFromShelter() {
         Shelter underTest = new Shelter();
-        OrganicPets organicPet = new OrganicPets("Rex", "A very good boy", 80, 20, 80);
-        RoboticPets roboticPet = new RoboticPets("Borkbot 3000", "A mechanical spaz", 80, 20, 80);
+        OrganicDog organicPet = new OrganicDog("Rex", "A very good boy");
+        RoboticPets roboticPet = new RoboticPets("Borkbot 3000", "A mechanical spaz");
         underTest.removePetFromShelter(organicPet, roboticPet);
     }
 
     @Test
     public void feedOrganicPets() {
         Shelter underTest = new Shelter();
-        OrganicPets organicPet1 = new OrganicPets("Rex", "A very good boy", 80, 20, 80);
-        OrganicPets organicPet2 = new OrganicPets("Mayla", "A beautiful golden girl", 80, 20, 80);
+        OrganicDog organicPet1 = new OrganicDog("Rex", "A very good boy");
+        OrganicDog organicPet2 = new OrganicDog("Mayla", "A beautiful golden girl");
         assertEquals(60, organicPet1.getHunger());
         assertEquals(60, organicPet2.getHunger());
         underTest.feedOrganicPets();
-        assertEquals(80, organicPet1.feedOrganicPets());
-        assertEquals(80, organicPet2.feedOrganicPets());
+        //add another assert to show hunger has increased
     }
 
     @Test
     public void waterOrganicPets() {
         Shelter underTest = new Shelter();
-        OrganicPets organicPet1 = new OrganicPets("Rex", "A very good boy", 80, 20, 80);
-        OrganicPets organicPet2 = new OrganicPets("Mayla", "A beautiful golden girl", 80, 20, 80);
+        OrganicDog organicPet1 = new OrganicDog("Rex", "A very good boy");
+        OrganicDog organicPet2 = new OrganicDog("Mayla", "A beautiful golden girl");
         assertEquals(60, organicPet1.getThirst());
         assertEquals(60, organicPet2.getThirst());
         underTest.waterOrganicPets();
-        assertEquals(75, organicPet1.waterOrganicPets());
-        assertEquals(75, organicPet2.waterOrganicPets());
+        //add another assert to show thirst has increased
     }
 
     @Test
     public void oilRoboticPets() {
         Shelter underTest = new Shelter();
-        RoboticPets roboticPet1 = new RoboticPets("Borkbot 3000", "A mechanical spaz", 80, 20, 80);
-        RoboticPets roboticPet2 = new RoboticPets("Rover", "A silver box filled with bolts", 80, 20, 80);
+        RoboticPets roboticPet1 = new RoboticPets("Borkbot 3000", "A mechanical spaz");
+        RoboticPets roboticPet2 = new RoboticPets("Rover", "A silver box filled with bolts");
         assertEquals(60, roboticPet1.getOilLevel());
         assertEquals(60, roboticPet2.getOilLevel());
         underTest.oilRoboticPets();

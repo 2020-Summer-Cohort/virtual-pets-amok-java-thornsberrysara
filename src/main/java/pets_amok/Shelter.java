@@ -7,39 +7,55 @@ import java.util.Map;
 public class Shelter {
     public Map<String, VirtualPets> petsMap = new HashMap<>();
 
-    public Map<String, VirtualPets> getPetsMap() {
-        return petsMap;
+    public Collection<VirtualPets> virtualPets() {
+        return virtualPets();
     }
 
-    public Collection getPetCollection() {
-        return petsMap.keySet();
-    }
-
-    public void addPetToShelter(OrganicPets organicPet, RoboticPets roboticPet) {
+    public void addPetToShelter(OrganicDog organicPet, RoboticPets roboticPet) {
         petsMap.put(organicPet.getPetName(), organicPet);
         petsMap.put(roboticPet.getPetName(), roboticPet);
     }
 
-    public void removePetFromShelter(OrganicPets organicPet, RoboticPets roboticPet) {
+    public void removePetFromShelter(OrganicDog organicPet, RoboticPets roboticPet) {
         petsMap.remove(organicPet.getPetName(), organicPet);
         petsMap.remove(roboticPet.getPetName(), roboticPet);
     }
 
+    public Collection<VirtualPets> listPets() {
+        return petsMap.values();
+    }
+
+    public void tick() {
+        for (VirtualPets pets : virtualPets()) {
+            pets.tick();
+        }
+    }
+
     public void feedOrganicPets() {
-        for (VirtualPets organicPet : petsMap.values()) {
-            organicPet.feedOrganicPets();
+        for (VirtualPets organicPet : virtualPets()) {
+            if (organicPet instanceof Organic) {
+                ((Organic) organicPet).feedOrganicPets();
+            }
         }
     }
 
     public void waterOrganicPets() {
-        for (VirtualPets organicPet : petsMap.values()) {
-            organicPet.waterOrganicPets();
+        for (VirtualPets organicPet : virtualPets()) {
+            if (organicPet instanceof Organic) {
+                ((Organic) organicPet).waterOrganicPets();
+            }
         }
     }
 
     public void oilRoboticPets() {
-        for (VirtualPets roboticPet : petsMap.values()) {
-            roboticPet.oilRoboticPets();
+        for (VirtualPets roboticPet : virtualPets()) {
+            if (roboticPet instanceof Robotic) {
+                ((Robotic) roboticPet).oilRoboticPets();
+            }
         }
+    }
+
+    public void addPetToShelter(VirtualPets pets) {
+
     }
 }

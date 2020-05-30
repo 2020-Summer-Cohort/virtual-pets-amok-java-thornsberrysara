@@ -4,8 +4,13 @@ public class RoboticPets extends VirtualPets {
 
     protected int oilLevel;
 
-    public RoboticPets(String petName, String petDescription, int happiness, int boredom, int health) {
-        super(petName, petDescription, happiness, boredom, health);
+    @Override
+    public void tick() {
+
+    }
+
+    public RoboticPets(String petName, String petDescription) {
+        super(petName, petDescription);
         this.oilLevel = 60;
     }
 

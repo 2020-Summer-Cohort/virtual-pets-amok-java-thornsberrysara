@@ -8,12 +8,12 @@ public class VirtualPetsTest {
 
     @Test
     public void shouldCreateVirtualPetsClass() {
-        VirtualPets underTest = new VirtualPets ("Rex", "A very good boy", 80, 20, 80);
+        VirtualPets underTest = new VirtualPets ("Rex", "A very good boy");
     }
 
     @Test
     public void shouldCreateVirtualPets() {
-        VirtualPets underTest = new VirtualPets("Rex", "A very good boy", 80, 20, 80);
+        VirtualPets underTest = new VirtualPets("Rex", "A very good boy");
         String petName = underTest.getPetName();
         String petDescription = underTest.getPetDescription();
         assertEquals("Rex", petName);
@@ -22,36 +22,23 @@ public class VirtualPetsTest {
 
     @Test
     public void shouldHaveDefaultHappiness() {
-        VirtualPets underTest = new VirtualPets("Rex", "A very good boy", 80, 20, 80);
+        VirtualPets underTest = new VirtualPets("Rex", "A very good boy");
         int happiness = underTest.getHappiness();
         assertEquals(80, happiness);
     }
 
     @Test
     public void shouldHaveDefaultBoredom() {
-        VirtualPets underTest = new VirtualPets("Rex", "A very good boy", 80, 20, 80);
+        VirtualPets underTest = new VirtualPets("Rex", "A very good boy");
         int boredom = underTest.getBoredom();
         assertEquals(20, boredom);
     }
 
     @Test
     public void shouldHaveDefaultHealth() {
-        VirtualPets underTest = new VirtualPets("Rex", "A very good boy", 80, 20, 80);
+        VirtualPets underTest = new VirtualPets("Rex", "A very good boy");
         int health = underTest.getHealth();
         assertEquals(80, health);
     }
-
-    @Test
-    public void shouldWalkAllPetsToIncreaseHappiness() {
-        VirtualPets underTest = new VirtualPets("Rex", "A very good boy", 80, 20, 80);
-        OrganicPets organicPet = new OrganicPets("Rex", "A very good boy", 80, 20, 80);
-        RoboticPets roboticPet = new RoboticPets("Borkbot 3000", "A mechanical spaz", 80, 20, 80);
-        int happiness = underTest.getHappiness();
-        assertEquals(80, happiness);
-        underTest.walkAllPets();
-        assertEquals(100, organicPet.walkAllPets());
-        assertEquals(100, roboticPet.walkAllPets());
-    }
-
 
 }

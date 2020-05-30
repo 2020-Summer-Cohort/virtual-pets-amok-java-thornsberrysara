@@ -4,18 +4,18 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class OrganicPetsTest {
+public class OrganicDogTest {
 
     @Test
     public void shouldHaveDefaultHunger() {
-        OrganicPets underTest = new OrganicPets("Rex", "A very good boy", 80, 20, 80);
+        OrganicDog underTest = new OrganicDog("Rex", "A very good boy");
         int hunger = underTest.getHunger();
         assertEquals(60, hunger);
     }
 
     @Test
     public void shouldHaveDefaultThirst() {
-        OrganicPets underTest = new OrganicPets("Rex", "A very good boy", 80, 20, 80);
+        OrganicDog underTest = new OrganicDog("Rex", "A very good boy");
         int thirst = underTest.getThirst();
         assertEquals(60, thirst);
     }

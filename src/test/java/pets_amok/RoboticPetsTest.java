@@ -8,7 +8,7 @@ public class RoboticPetsTest {
 
     @Test
     public void shouldHaveDefaultOilLevel() {
-        RoboticPets underTest = new RoboticPets("Borkbot 3000", "A mechanical spaz", 80, 20, 80);
+        RoboticPets underTest = new RoboticPets("Borkbot 3000", "A mechanical spaz");
         int oilLevel = underTest.getOilLevel();
         assertEquals(60, oilLevel);
     }
