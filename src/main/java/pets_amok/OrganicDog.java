@@ -37,8 +37,7 @@ public class OrganicDog extends VirtualPets implements Organic {
     }
 
     @Override
-    public int amountOfWaste() {
-        return 0;
+    public void amountOfWaste() {
     }
 
     @Override

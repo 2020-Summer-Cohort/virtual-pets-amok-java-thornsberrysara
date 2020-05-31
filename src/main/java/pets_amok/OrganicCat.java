@@ -35,8 +35,13 @@ public class OrganicCat extends VirtualPets implements Organic {
     }
 
     @Override
-    public int amountOfWaste() {
-        return 0;
+    public int getAmountOfWaste() {
+        return amountOfWaste;
+    }
+
+    @Override
+    public void amountOfWaste() {
+
     }
 
     @Override
@@ -60,6 +65,10 @@ public class OrganicCat extends VirtualPets implements Organic {
 
     public void setThirst(int thirst) {
         this.thirst = thirst;
+    }
+
+    public void setAmountOfWaste(int amountOfWaste) {
+        this.amountOfWaste = amountOfWaste;
     }
 
     @Override

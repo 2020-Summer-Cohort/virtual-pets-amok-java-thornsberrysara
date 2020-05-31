@@ -7,6 +7,10 @@ import java.util.Map;
 public class Shelter {
     public Map<String, VirtualPets> petsMap = new HashMap<>();
 
+    public Map<String, VirtualPets> getPetsMap() {
+        return petsMap;
+    }
+
     public Collection<VirtualPets> virtualPets() {
         return virtualPets();
     }
