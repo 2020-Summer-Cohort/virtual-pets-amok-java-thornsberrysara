@@ -38,5 +38,5 @@ public abstract class VirtualPets {
     }
 
     public abstract void tick();
-    public abstract void playWithPet();
+    public abstract int playWithPet();
 }

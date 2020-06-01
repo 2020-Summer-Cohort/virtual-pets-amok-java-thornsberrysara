@@ -12,4 +12,13 @@ public class RoboticPetsTest {
         int oilLevel = underTest.getOilLevel();
         assertEquals(60, oilLevel);
     }
+
+    @Test
+    public void oilShouldIncrease() {
+        RoboticPets underTest = new RoboticPets("Borkbot 3000", "A mechanical spaz");
+        int oilLevel = underTest.getOilLevel();
+        assertEquals(60, oilLevel);
+        underTest.getOilLevel();
+        assertEquals(80, oilLevel);
+    }
 }

@@ -9,13 +9,14 @@ public class OrganicCatTest {
     public void shouldHaveDefaultHunger() {
         OrganicCat underTest = new OrganicCat("Mittens", "A mischievous tuxedo cat");
         int hunger = underTest.getHunger();
-        assertEquals(60, hunger);
+        assertEquals(20, hunger);
     }
 
     @Test
     public void shouldHaveDefaultThirst() {
         OrganicCat underTest = new OrganicCat("Mittens", "A mischievous tuxedo cat");
         int thirst = underTest.getThirst();
-        assertEquals(60, thirst);
+        assertEquals(20, thirst);
     }
+
 }

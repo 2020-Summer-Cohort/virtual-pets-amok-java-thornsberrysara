@@ -19,4 +19,5 @@ public class OrganicDogTest {
         int thirst = underTest.getThirst();
         assertEquals(60, thirst);
     }
+
 }

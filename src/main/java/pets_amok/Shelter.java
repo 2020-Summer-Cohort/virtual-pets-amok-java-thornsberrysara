@@ -39,7 +39,7 @@ public class Shelter {
     public void playWithPet(String petChoice) {
         for (VirtualPets pets : petMap.values()) {
             if (pets instanceof OrganicCat) {
-                ((OrganicCat) pets).playWithPet();
+                ((Organic) pets).playWithPet();
             }
         }
     }

@@ -11,15 +11,17 @@ public class RoboticPets extends VirtualPets implements Robotic {
 
     @Override
     public void tick() {
-        oilLevel += 5;
+        oilLevel -= 5;
         if (oilLevel <= 30) {
             health -= 5;
         }
     }
 
     @Override
-    public void playWithPet() {
-
+    public int playWithPet() {
+        boredom = 0;
+        happiness += 10;
+        return happiness;
     }
 
     public int getOilLevel() {
@@ -28,7 +30,7 @@ public class RoboticPets extends VirtualPets implements Robotic {
 
     @Override
     public int getOil() {
-        return 80;
+        return oilLevel;
     }
 
     public void oilRoboticPets() {

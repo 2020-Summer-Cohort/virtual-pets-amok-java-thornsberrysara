@@ -64,8 +64,10 @@ public class OrganicCat extends VirtualPets implements Organic {
     }
 
     @Override
-    public void playWithPet() {
-
+    public int playWithPet() {
+        boredom = 0;
+        happiness += 10;
+        return happiness;
     }
 
 }

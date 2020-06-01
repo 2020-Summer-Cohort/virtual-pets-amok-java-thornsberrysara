@@ -12,4 +12,5 @@ public interface Organic {
     int getHunger();
     int getThirst();
 
+    int playWithPet();
 }
