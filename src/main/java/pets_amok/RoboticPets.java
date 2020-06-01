@@ -11,7 +11,10 @@ public class RoboticPets extends VirtualPets implements Robotic {
 
     @Override
     public void tick() {
-
+        oilLevel += 5;
+        if (oilLevel <= 30) {
+            health -= 5;
+        }
     }
 
     @Override

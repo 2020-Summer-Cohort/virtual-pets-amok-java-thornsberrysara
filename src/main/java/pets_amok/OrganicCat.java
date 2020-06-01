@@ -3,64 +3,42 @@ package pets_amok;
 public class OrganicCat extends VirtualPets implements Organic {
     protected int hunger;
     protected int thirst;
+    protected int cageCleanliness;
 
     public OrganicCat(String petName, String petDescription) {
         super(petName, petDescription);
-        this.hunger = 60;
-        this.thirst = 60;
+        this.hunger = 20;
+        this.thirst = 20;
     }
 
     @Override
-    public void feed() {
+    public int feedOrganicPets() {
         hunger = hunger - 10;
+        return hunger;
     }
 
     @Override
-    public void water() {
+    public int waterOrganicPets() {
         thirst = thirst - 15;
+        return thirst;
     }
 
-    @Override
-    public void cleanWaste() {
-
-    }
 
     @Override
     public int getHunger() {
-        return 0;
+        return hunger;
     }
 
     @Override
     public int getThirst() {
-        return 0;
+        return thirst;
     }
 
     @Override
-    public void walkDogs() {
-
+    public int getCageCleanliness() {
+        return cageCleanliness;
     }
 
-
-    @Override
-    public int getAmountOfWaste() {
-        return 0;
-    }
-
-
-    @Override
-    public void feedOrganicPets() {
-
-    }
-
-    @Override
-    public void waterOrganicPets() {
-
-    }
-
-    @Override
-    public void amountOfWaste() {
-
-    }
 
     @Override
     public int cleanCage() {
@@ -70,8 +48,19 @@ public class OrganicCat extends VirtualPets implements Organic {
 
     @Override
     public void tick() {
-        hunger -= 5;
-        thirst -= 4;
+        hunger += 4;
+        thirst += 5;
+        boredom += 3;
+        if (hunger >= 60) {
+            health -= 5;
+        }
+        if (thirst >= 60) {
+            health -= 5;
+        }
+        if (boredom <= 60) {
+            health -= 5;
+        }
+
     }
 
     @Override
