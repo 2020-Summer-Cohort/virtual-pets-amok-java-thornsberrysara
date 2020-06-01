@@ -9,6 +9,11 @@ public class RoboticPets extends VirtualPets {
 
     }
 
+    @Override
+    public void playWithPet() {
+
+    }
+
     public RoboticPets(String petName, String petDescription) {
         super(petName, petDescription);
         this.oilLevel = 60;

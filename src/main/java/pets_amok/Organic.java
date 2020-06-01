@@ -7,11 +7,14 @@ public interface Organic {
 
     public int getHunger();
     public int getThirst();
+
+    void walkDogs();
+
     public int getAmountOfWaste();
 
     void amountOfWaste();
 
     void feedOrganicPets();
     void waterOrganicPets();
-    void cleanCage();
+    int cleanCage();
 }

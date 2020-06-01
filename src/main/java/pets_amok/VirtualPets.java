@@ -37,7 +37,6 @@ public abstract class VirtualPets {
         return health;
     }
 
-    public void tick() {
-    }
-
+    public abstract void tick();
+    public abstract void playWithPet();
 }

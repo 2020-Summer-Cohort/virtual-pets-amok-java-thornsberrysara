@@ -1,25 +1,27 @@
 package pets_amok;
 
-import java.util.Collection;
 import java.util.Map;
 import java.util.Scanner;
 
 public class Application {
     private static Shelter shelter = new Shelter();
-    protected static Collection<VirtualPets> virtualPets = shelter.listPets();
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("Welcome to Virtual Pets AMOK!");
-        shelter.addPetToShelter(new OrganicDog("Rex", "A very good boy"));
-        shelter.addPetToShelter(new OrganicCat("Mittens", "A mischievous tuxedo cat"));
-        shelter.addPetToShelter(new RoboticPets("Borkbot 3000", "A mechanical spaz"));
+        VirtualPets dog = new OrganicDog("Rex", "A very good boy");
+        shelter.addPetToShelter(dog);
+        VirtualPets cat = new OrganicCat("Mittens", "A mischievous tuxedo cat");
+        shelter.addPetToShelter(cat);
+        VirtualPets robot = new RoboticPets("Borkbot 3000", "A mechanical spaz");
+        shelter.addPetToShelter(robot);
 
         int select;
 
         do {
             System.out.println("Please view the status of your pets.");
-            Map<String, VirtualPets> petsMap = shelter.getPetsMap();
+            Map<String, VirtualPets> petsMap = shelter.getPetMap();
+            System.out.println(petsMap.values());
             for (VirtualPets virtualPets : petsMap.values()) {
                 if (virtualPets instanceof Organic) {
                     System.out.println(virtualPets.getPetName() + "\n" +
@@ -29,7 +31,7 @@ public class Application {
                             "\tHunger: " + ((Organic) virtualPets).getHunger() + "\n" +
                             "\tThirst: " + ((Organic) virtualPets).getThirst() + "\n" +
                             "\tCage Cleanliness: " + ((Organic) virtualPets).getAmountOfWaste());
-                }else if (virtualPets instanceof Robotic) {
+                } else if (virtualPets instanceof Robotic) {
                     System.out.println(virtualPets.getPetName() + "\n" +
                             "\tHappiness: " + virtualPets.getHappiness() + "\n" +
                             "\tBoredom: " + virtualPets.getBoredom() + "\n" +
@@ -50,7 +52,49 @@ public class Application {
 
             select = input.nextInt();
             shelter.tick();
+            petAction(select, shelter);
+
         } while (select != 0);
+    }
+
+    public static void petAction(int select, Shelter shelter) {
+        Scanner input = new Scanner(System.in);
+        if (select == 1) {
+            shelter.feedOrganicPets();
+            System.out.println("Your organic pets have been fed.");
+        } else if (select == 2) {
+            shelter.waterOrganicPets();
+            System.out.println("Your organic pets are now hydrated.");
+        } else if (select == 3) {
+            shelter.cleanWaste();
+            System.out.println("The cages have been cleaned.");
+        } else if (select == 4) {
+            shelter.oilRoboticPets();
+            System.out.println("You filled the robotic pets' oil.");
+        } else if (select == 5) {
+            System.out.println("Who would you like to play with?");
+            System.out.println(Shelter.getPetMap());
+            String petChoice = input.nextLine();
+            shelter.playWithPet(petChoice);
+            System.out.println("You played with " + petChoice + ".");
+        } else if (select == 6) {
+            shelter.walkAllDogs();
+            System.out.println("You took the dogs for a walk.");
+//        } else if (select == 7) {
+//            System.out.println("Sure, we have room for another pet. Please give this pet a name");
+//            String addPetName = input.nextLine();
+//            System.out.println("Please give a short description about this pet.");
+//            String addPetDescription = input.nextLine();
+//            VirtualPets addPet = new VirtualPets(addPetName, addPetDescription);
+//            shelter.addPetToShelter(addPet);
+        } else if (select == 8) {
+            System.out.println("We would love to give a pet a new home! Who would you like to adopt?");
+            String adoptionChoice = input.nextLine();
+            shelter.removePetFromShelter(shelter.returnPetFromName(adoptionChoice));
+            System.out.println("Thank you for adopting " + adoptionChoice + "!");
+        } else if (select == 0) {
+            System.out.println("You're leaving already? See you soon!");
+        }
     }
 }
 

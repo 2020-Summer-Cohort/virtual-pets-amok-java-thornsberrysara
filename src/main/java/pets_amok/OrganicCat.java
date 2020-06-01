@@ -13,12 +13,12 @@ public class OrganicCat extends VirtualPets implements Organic {
 
     @Override
     public void feed() {
-
+        hunger = hunger - 10;
     }
 
     @Override
     public void water() {
-
+        thirst = thirst - 15;
     }
 
     @Override
@@ -26,17 +26,24 @@ public class OrganicCat extends VirtualPets implements Organic {
 
     }
 
+    @Override
     public int getHunger() {
-        return hunger;
+        return 0;
     }
 
+    @Override
     public int getThirst() {
-        return thirst;
+        return 0;
+    }
+
+    @Override
+    public void walkDogs() {
+
     }
 
     @Override
     public int getAmountOfWaste() {
-        return amountOfWaste;
+        return 0;
     }
 
     @Override
@@ -55,26 +62,20 @@ public class OrganicCat extends VirtualPets implements Organic {
     }
 
     @Override
-    public void cleanCage() {
-
+    public int cleanCage() {
+        return 0;
     }
 
-    public void setHunger(int hunger) {
-        this.hunger = hunger;
-    }
-
-    public void setThirst(int thirst) {
-        this.thirst = thirst;
-    }
-
-    public void setAmountOfWaste(int amountOfWaste) {
-        this.amountOfWaste = amountOfWaste;
-    }
 
     @Override
     public void tick() {
         hunger -= 5;
         thirst -= 4;
+    }
+
+    @Override
+    public void playWithPet() {
+
     }
 
 }
