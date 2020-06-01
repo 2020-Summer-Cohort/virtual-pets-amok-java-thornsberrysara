@@ -3,7 +3,6 @@ package pets_amok;
 public class OrganicCat extends VirtualPets implements Organic {
     protected int hunger;
     protected int thirst;
-    protected int amountOfWaste;
 
     public OrganicCat(String petName, String petDescription) {
         super(petName, petDescription);
@@ -41,15 +40,12 @@ public class OrganicCat extends VirtualPets implements Organic {
 
     }
 
+
     @Override
     public int getAmountOfWaste() {
         return 0;
     }
 
-    @Override
-    public void amountOfWaste() {
-
-    }
 
     @Override
     public void feedOrganicPets() {
@@ -58,6 +54,11 @@ public class OrganicCat extends VirtualPets implements Organic {
 
     @Override
     public void waterOrganicPets() {
+
+    }
+
+    @Override
+    public void amountOfWaste() {
 
     }
 

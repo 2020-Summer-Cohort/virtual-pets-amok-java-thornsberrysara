@@ -80,13 +80,23 @@ public class Application {
         } else if (select == 6) {
             shelter.walkAllDogs();
             System.out.println("You took the dogs for a walk.");
-//        } else if (select == 7) {
-//            System.out.println("Sure, we have room for another pet. Please give this pet a name");
-//            String addPetName = input.nextLine();
-//            System.out.println("Please give a short description about this pet.");
-//            String addPetDescription = input.nextLine();
-//            VirtualPets addPet = new VirtualPets(addPetName, addPetDescription);
-//            shelter.addPetToShelter(addPet);
+        } else if (select == 7) {
+            System.out.println("Sure, we have room for another pet. Press [1] for Organic Dog, [2] for Organic Cat, or [3] for Robotic.");
+            String petToAddName = input.nextLine();
+            String petToAddDescription = input.nextLine();
+            int typeOfPet = input.nextInt();
+            if (typeOfPet == 1) {
+                VirtualPets petToAdd = new OrganicDog(petToAddName, petToAddDescription);
+                shelter.addPetToShelter(petToAdd);
+            } else if (typeOfPet == 2) {
+                VirtualPets petToAdd = new OrganicCat(petToAddName, petToAddDescription);
+                shelter.addPetToShelter(petToAdd);
+            } else if (typeOfPet == 3) {
+                VirtualPets petToAdd = new RoboticPets(petToAddName, petToAddDescription);
+                shelter.addPetToShelter(petToAdd);
+            }
+            System.out.println("Please type a short description about " + petToAddName);
+            System.out.println("You added " + petToAddName);
         } else if (select == 8) {
             System.out.println("We would love to give a pet a new home! Who would you like to adopt?");
             String adoptionChoice = input.nextLine();
