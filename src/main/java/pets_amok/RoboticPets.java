@@ -1,6 +1,6 @@
 package pets_amok;
 
-public class RoboticPets extends VirtualPets {
+public class RoboticPets extends VirtualPets implements Robotic {
 
     protected int oilLevel;
 
@@ -23,8 +23,12 @@ public class RoboticPets extends VirtualPets {
         return oilLevel;
     }
 
-    public int oilRoboticPets() {
+    @Override
+    public int getOil() {
+        return 80;
+    }
+
+    public void oilRoboticPets() {
         oilLevel = oilLevel + 20;
-        return oilLevel;
     }
 }

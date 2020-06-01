@@ -31,7 +31,7 @@ public class Application {
                             "\tHunger: " + ((Organic) virtualPets).getHunger() + "\n" +
                             "\tThirst: " + ((Organic) virtualPets).getThirst() + "\n" +
                             "\tCage Cleanliness: " + ((Organic) virtualPets).getAmountOfWaste());
-                } else if (virtualPets instanceof Robotic) {
+                } if (virtualPets instanceof Robotic) {
                     System.out.println(virtualPets.getPetName() + "\n" +
                             "\tHappiness: " + virtualPets.getHappiness() + "\n" +
                             "\tBoredom: " + virtualPets.getBoredom() + "\n" +

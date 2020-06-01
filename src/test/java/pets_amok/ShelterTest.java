@@ -10,16 +10,14 @@ public class ShelterTest {
     public void addPetToShelter() {
         Shelter underTest = new Shelter();
         OrganicDog organicPet = new OrganicDog("Rex", "A very good boy");
-        RoboticPets roboticPet = new RoboticPets("Borkbot 3000", "A mechanical spaz");
-        underTest.addPetToShelter(organicPet, roboticPet);
+        underTest.addPetToShelter(organicPet);
     }
 
     @Test
     public void removePetFromShelter() {
         Shelter underTest = new Shelter();
         OrganicDog organicPet = new OrganicDog("Rex", "A very good boy");
-        RoboticPets roboticPet = new RoboticPets("Borkbot 3000", "A mechanical spaz");
-        underTest.removePetFromShelter(organicPet, roboticPet);
+        underTest.removePetFromShelter(organicPet);
     }
 
     @Test
@@ -52,7 +50,6 @@ public class ShelterTest {
         assertEquals(60, roboticPet1.getOilLevel());
         assertEquals(60, roboticPet2.getOilLevel());
         underTest.oilRoboticPets();
-        assertEquals(80, roboticPet1.oilRoboticPets());
-        assertEquals(80, roboticPet2.oilRoboticPets());
+
     }
 }
