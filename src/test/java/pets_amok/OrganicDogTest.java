@@ -10,14 +10,14 @@ public class OrganicDogTest {
     public void shouldHaveDefaultHunger() {
         OrganicDog underTest = new OrganicDog("Rex", "A very good boy");
         int hunger = underTest.getHunger();
-        assertEquals(60, hunger);
+        assertEquals(20, hunger);
     }
 
     @Test
     public void shouldHaveDefaultThirst() {
         OrganicDog underTest = new OrganicDog("Rex", "A very good boy");
         int thirst = underTest.getThirst();
-        assertEquals(60, thirst);
+        assertEquals(20, thirst);
     }
 
 }

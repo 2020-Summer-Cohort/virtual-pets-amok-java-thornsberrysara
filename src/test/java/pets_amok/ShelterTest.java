@@ -25,6 +25,8 @@ public class ShelterTest {
         Shelter underTest = new Shelter();
         OrganicDog organicPet1 = new OrganicDog("Rex", "A very good boy");
         OrganicDog organicPet2 = new OrganicDog("Mayla", "A beautiful golden girl");
+        underTest.addPetToShelter(organicPet1);
+        underTest.addPetToShelter(organicPet2);
         assertEquals(20, organicPet1.getHunger());
         assertEquals(20, organicPet2.getHunger());
         underTest.feedOrganicPets();
@@ -37,6 +39,8 @@ public class ShelterTest {
         Shelter underTest = new Shelter();
         OrganicDog organicPet1 = new OrganicDog("Rex", "A very good boy");
         OrganicDog organicPet2 = new OrganicDog("Mayla", "A beautiful golden girl");
+        underTest.addPetToShelter(organicPet1);
+        underTest.addPetToShelter(organicPet2);
         assertEquals(20, organicPet1.getThirst());
         assertEquals(20, organicPet2.getThirst());
         underTest.waterOrganicPets();
@@ -50,6 +54,8 @@ public class ShelterTest {
         Shelter underTest = new Shelter();
         RoboticPets roboticPet1 = new RoboticPets("Borkbot 3000", "A mechanical spaz");
         RoboticPets roboticPet2 = new RoboticPets("Rover", "A silver box filled with bolts");
+        underTest.addPetToShelter(roboticPet1);
+        underTest.addPetToShelter(roboticPet2);
         assertEquals(60, roboticPet1.getOilLevel());
         assertEquals(60, roboticPet2.getOilLevel());
         underTest.oilRoboticPets();
